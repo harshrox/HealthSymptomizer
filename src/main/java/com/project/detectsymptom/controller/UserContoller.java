@@ -26,6 +26,8 @@ public class UserContoller {
         List<String> symptoms = userModel.getSymptoms();
         System.out.println(userModel.toString());
         System.out.println(symptoms);
+        //System.out.println("Hiii");
+
 
 
 
