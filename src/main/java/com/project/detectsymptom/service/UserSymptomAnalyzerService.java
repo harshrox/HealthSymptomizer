@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Service
 public class UserSymptomAnalyzerService {
     @Autowired
-    private ApplicationContext context; // for resource loading
+    private ApplicationContext context;
 
     public Map<String, Double> analyzeUserSymptoms(String[] userSymptoms) throws Exception {
 
