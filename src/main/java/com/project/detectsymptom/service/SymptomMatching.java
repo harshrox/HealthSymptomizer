@@ -34,7 +34,7 @@ public class SymptomMatching {
         }
 
         // If user symptoms match
-        double percentage = ((double) countSymptoms/userArray.size())*100;
+        double percentage = ((double) countSymptoms/symptoms.size())*100;
         result.add(0 , disease);
         result.add(1 , String.valueOf(percentage));
 
