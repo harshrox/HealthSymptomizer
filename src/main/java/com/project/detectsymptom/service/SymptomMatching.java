@@ -2,6 +2,7 @@ package com.project.detectsymptom.service;
 
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,9 +18,16 @@ public class SymptomMatching {
     It returns a list containing the disease and its percentage probability.
      */
     public List<String> match(String disease , List<String> symptoms , List<String> userArray){
+
+        // Convert all symptoms to uppercase
+        for (int i = 0; i < symptoms.size(); i++) {
+            String element = symptoms.get(i);
+            symptoms.set(i, element.toUpperCase());
+        }
+
         int countSymptoms = 0;
         for(String symptom : userArray){
-            if(symptoms.contains(symptom)){
+            if(symptoms.contains(symptom.toUpperCase())){
                 countSymptoms++;
             }
         }
@@ -34,9 +42,10 @@ public class SymptomMatching {
         }
 
         // If user symptoms match
-        double percentage = ((double) countSymptoms/userArray.size())*100;
+        double percentage = ((double) countSymptoms/symptoms.size())*100;
+        DecimalFormat df = new DecimalFormat("#.##");
         result.add(0 , disease);
-        result.add(1 , String.valueOf(percentage));
+        result.add(1 , df.format(percentage));
 
         return result;
     }
