@@ -2,6 +2,7 @@ package com.project.detectsymptom.controller;
 
 
 import com.project.detectsymptom.model.UserModel;
+import com.project.detectsymptom.service.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,10 @@ import java.util.List;
 
 @RestController
 public class UserContoller {
+
+    @Autowired
+    Json json;
+
     @PostMapping("/user")
     public ResponseEntity<?> User(@RequestBody UserModel userModel){
 
@@ -25,7 +30,8 @@ public class UserContoller {
         String age = userModel.getAge();
         List<String> symptoms = userModel.getSymptoms();
         System.out.println(userModel.toString());
-        System.out.println(symptoms);
+        json = new Json(symptoms);
+        System.out.println(json.test());
 
 
 
