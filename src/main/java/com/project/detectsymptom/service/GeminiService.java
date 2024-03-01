@@ -25,7 +25,7 @@ public class GeminiService {
             ResponseEntity<String> responseEntity = new RestTemplate().exchange(API_URL + "?key=" + API_KEY,
                     HttpMethod.POST, requestEntity, String.class);
 
-            HttpStatus statusCode = responseEntity.getStatusCode();
+            HttpStatus statusCode = (HttpStatus) responseEntity.getStatusCode();
             String responseBody = responseEntity.getBody();
 
             System.out.println("Status Code: " + statusCode);

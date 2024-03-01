@@ -16,11 +16,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public class UserSymptomAnalyzerService {
+public class JSON_Service {
     @Autowired
     private ApplicationContext context;
 
-    public Map<String, Double> analyzeUserSymptoms(List<String> userSymptoms) throws Exception {
+    public Map<Double , String> analyzeUserSymptoms(List<String> userSymptoms) throws Exception {
 
         // 1. Load data from data.json
         Resource resource = context.getResource("classpath:data.json");
@@ -36,8 +36,9 @@ public class UserSymptomAnalyzerService {
         JSONArray diseases = (JSONArray) parser.parse(jsonData);
 
         // 3. Analyze user symptoms
-        Map<String, Double> diseaseScores = new HashMap<>();
+        Map<Double ,  String> diseaseScores = new TreeMap<>(Collections.reverseOrder());
         SymptomMatching check = new SymptomMatching();
+        GeminiAPI geminiAPI = new GeminiAPI();
         for (Object diseaseObj : diseases) {
             JSONObject disease = (JSONObject) diseaseObj;
             String diseaseName = (String) disease.get("Disease");
@@ -49,8 +50,16 @@ public class UserSymptomAnalyzerService {
 
 
             List<String> output = check.match(diseaseName , diseaseSymptomsList , userSymptoms);
-            diseaseScores.put(output.get(0) , Double.parseDouble(output.get(1)));
+            if(Double.parseDouble(output.get(1)) > 30){
+                diseaseScores.put(Double.parseDouble(output.get(1)) , output.get(0));
+            }
 
+
+        }
+
+        if(diseaseScores.size()==0){
+            List<String> output = geminiAPI.gemini(userSymptoms);
+            diseaseScores.put(Double.parseDouble(output.get(1)) , output.get(0));
         }
 
 
