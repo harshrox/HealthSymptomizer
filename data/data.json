@@ -763,7 +763,7 @@
     "Precaution": "rest, consult doctor, medication, rest, consult doctor, medication, stop alcohol consumption, rest, consult doctor, medication"
   },
   {
-    "Disease": "Hypertension ",
+    "Disease": "Hypertension",
     "Symptoms": [
       "headache",
       "chest pain",
@@ -773,7 +773,7 @@
     "Precaution": "salt baths, reduce stress, get proper sleep, salt baths, reduce stress, get proper sleep, meditation, salt baths, reduce stress, get proper sleep"
   },
   {
-    "Disease": "Hypertension ",
+    "Disease": "Hypertension",
     "Symptoms": [
       "headache",
       "chest pain",
