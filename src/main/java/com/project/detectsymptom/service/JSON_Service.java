@@ -13,10 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
@@ -27,7 +24,7 @@ public class JSON_Service {
     @Autowired
     private DataUpdaterService dataUpdaterService;
 
-    public Map<Double, String> analyzeUserSymptoms(List<String> userSymptoms) throws Exception {
+    public Map<String, List<String>> analyzeUserSymptoms(List<String> userSymptoms) throws Exception {
         String filePath = "data/data.json";
         JSONParser parser = new JSONParser();
         JSONArray diseases = null;
@@ -40,25 +37,26 @@ public class JSON_Service {
         }
 
 
-        Map<Double, String> diseaseScores = new TreeMap<>(Collections.reverseOrder());
+        Map<String, List<String>> diseaseScores = new HashMap<>();
         SymptomMatching check = new SymptomMatching();
-        GeminiAPI geminiAPI = new GeminiAPI();
+
         for (Object diseaseObj : diseases) {
             JSONObject disease = (JSONObject) diseaseObj;
             String diseaseName = (String) disease.get("Disease");
+            String precaution = (String) disease.get("Precaution");
 
             JSONArray diseaseSymptoms = (JSONArray) disease.get("Symptoms");
             @SuppressWarnings("unchecked")
             List<String> diseaseSymptomsList = (List<String>) diseaseSymptoms.stream().map(Object::toString).collect(Collectors.toList());
 
             List<String> output = check.match(diseaseName, diseaseSymptomsList, userSymptoms);
-            if (Double.parseDouble(output.get(1)) > 30) {
-                diseaseScores.put(Double.parseDouble(output.get(1)), output.get(0));
+            if (Double.parseDouble(output.get(1)) > 20) {
+                diseaseScores.put(output.get(0), Arrays.asList(output.get(1) , precaution));
             }
         }
 
         if (diseaseScores.size() == 0) {
-            String prompt = "Suggest all the probable diseases based on the symptoms provided. Return the results in json form having 3 fixed keys , Disease : string , Symptoms : array of strings and Precautions(one single string). Make sure NOT to return in markdown format but as raw string of array of jsons." +
+            String prompt = "Suggest all the probable diseases based on the symptoms provided. Return the results in json form having 3 fixed keys , Disease : string , Symptoms : array of strings and Precaution(one single string). Make sure NOT to return in markdown format but as raw string of array of jsons." +
                     "Also, write the other related symptoms(one/two words only) too since provided symptoms may be very few. The result should be of type json array and must follow the given format. It should not deviate from the instructions as the returned response is assumed to be json array and will be further used in the project, wrong format can crash the project. Do not include any other words or phrases just the json array." +
                     "The symptoms for the disease to be predicted are " + userSymptoms + ", make sure to include these symptoms too in the ouput";
 
@@ -87,7 +85,24 @@ public class JSON_Service {
             }
         }
 
-        return diseaseScores;
+        // Sorting the hashmap on the basis of percentage probability
+
+        // Convert the entries of the HashMap to a List
+        List<Map.Entry<String, List<String>>> entryList = new ArrayList<>(diseaseScores.entrySet());
+
+        // Sort the List based on the first value of the List<String> in each entry
+        Collections.sort(entryList, (entry1, entry2) -> Double.compare(
+                Double.parseDouble(entry2.getValue().get(0)),
+                Double.parseDouble(entry1.getValue().get(0))));
+
+        // Create a LinkedHashMap to store the sorted entries
+        LinkedHashMap<String, List<String>> sortedScores = new LinkedHashMap<>();
+        for (Map.Entry<String, List<String>> entry : entryList) {
+            sortedScores.put(entry.getKey(), entry.getValue());
+        }
+
+
+        return sortedScores;
     }
 }
 

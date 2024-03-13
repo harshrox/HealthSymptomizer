@@ -114,7 +114,7 @@ public class UserController {
     @PostMapping("/test")
     public ResponseEntity<?> test(@RequestBody List<String> symptoms) {
 
-        Map<Double , String> analyzer;
+        Map<String , List<String>> analyzer;
         try {
             analyzer = jsonService.analyzeUserSymptoms(symptoms); // Use the injected service
         } catch (Exception e) {
