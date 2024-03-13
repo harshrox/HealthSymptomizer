@@ -56,7 +56,7 @@ public class UserController {
     public Object Gemini(){
 
         //String prompt = "Suggest all the probable one/two words symptoms for migraine in an array form like [symptoms] , don't write any unnecessary text , just return the array of symptoms";
-        String prompt = "Suggest all the probable diseases based on the symptoms provided. Return the results in json form having 3 fixed keys , disease , symptoms and precautions(one single string). Make sure NOT to return in markdown format but as raw string of array of jsons."+
+        String prompt = "Suggest only one most probable diseases based on the symptoms provided. Return the results in json form having 3 fixed keys , disease , symptoms and precautions(one single string). Make sure NOT to return in markdown format but as raw string of array of jsons."+
                 "Also, write the other related symptoms(one/two words only) too since provided symptoms may be very few. The result should be of type json array and must follow the given format. It should not deviate from the instructions as the returned response is known to be json array and will be further used in the project, wrong format can crash the project. Do not inckude any other words or phrases just the json array." +
                 "The symptoms for the disease to be predicted are ['headache' , 'tension' ,'wrinkles'] , make sure to include these symptoms too in the ouput";
         GeminiService geminiService = new GeminiService();
