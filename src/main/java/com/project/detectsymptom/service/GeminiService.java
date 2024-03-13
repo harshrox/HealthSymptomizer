@@ -30,7 +30,7 @@ public class GeminiService {
 
             System.out.println("Status Code: " + statusCode);
 
-            // Hi
+
             return responseBody;
         });
     }
