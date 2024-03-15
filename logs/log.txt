@@ -1,0 +1,12 @@
+Disease added: Alopecia Areata
+Disease added: Vitiligo
+Disease added: Premature Graying of Hair
+Disease added: Genetic Hair Loss
+Disease added: Dental Caries
+Disease added: Dental Caries
+Disease added: Kyphosis
+Disease added: Scheuermann's Disease
+Disease added: Osteoporosis
+Disease added: Dwarfism
+Disease added: Turner Syndrome
+Disease added: Growth Hormone Deficiency

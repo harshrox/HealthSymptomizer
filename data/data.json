@@ -1432,5 +1432,125 @@
       "muscle pain"
     ],
     "Precaution": "wash hands through, avoid fatty spicy food, medication, wash hands through, avoid fatty spicy food, medication, Consult nearest hospital, wash hands through, avoid fatty spicy food, medication"
+  },
+  {
+    "Disease": "Alopecia Areata",
+    "Symptoms": [
+      "hair fall",
+      "white hair",
+      "patchy hair loss",
+      "scaly patches"
+    ],
+    "Precaution": "Avoid stress, protect hair from sun, use gentle hair products"
+  },
+  {
+    "Disease": "Vitiligo",
+    "Symptoms": [
+      "hair fall",
+      "white hair",
+      "white patches on skin",
+      "loss of skin color"
+    ],
+    "Precaution": "Avoid sun exposure, use sunscreen, wear protective clothing"
+  },
+  {
+    "Disease": "Premature Graying of Hair",
+    "Symptoms": [
+      "hair fall",
+      "white hair",
+      "oxidative stress"
+    ],
+    "Precaution": "Maintain a healthy diet, avoid smoking, reduce stress"
+  },
+  {
+    "Disease": "Genetic Hair Loss",
+    "Symptoms": [
+      "hair fall",
+      "white hair",
+      "thinning hair"
+    ],
+    "Precaution": "Consult a dermatologist, consider hair transplant"
+  },
+  {
+    "Disease": "Dental Caries",
+    "Symptoms": [
+      "black teeth",
+      "toothache",
+      "sensitivity to hot or cold",
+      "brown or white spots on teeth",
+      "bad breath"
+    ],
+    "Precaution": "Brush your teeth twice a day, floss daily, and see your dentist regularly for checkups and cleanings."
+  },
+  {
+    "Disease": "Dental Caries",
+    "Symptoms": [
+      "black teeth",
+      "toothache",
+      "sensitivity to hot or cold",
+      "bad breath",
+      "visible holes in teeth"
+    ],
+    "Precaution": "Brush your teeth twice a day, floss daily, and see your dentist regularly for checkups and cleanings."
+  },
+  {
+    "Disease": "Kyphosis",
+    "Symptoms": [
+      "bent neck",
+      "back pain",
+      "reduced height",
+      "breathing problems",
+      "fatigue"
+    ],
+    "Precaution": "Maintain good posture, avoid heavy lifting, exercise regularly, and use a back brace if necessary."
+  },
+  {
+    "Disease": "Scheuermann's Disease",
+    "Symptoms": [
+      "bent neck",
+      "back pain",
+      "stiffness",
+      "fatigue",
+      "decreased range of motion"
+    ],
+    "Precaution": "Maintain good posture, avoid heavy lifting, exercise regularly, and use a back brace if necessary."
+  },
+  {
+    "Disease": "Osteoporosis",
+    "Symptoms": [
+      "bent neck",
+      "back pain",
+      "bone fractures",
+      "muscle weakness",
+      "fatigue"
+    ],
+    "Precaution": "Maintain a healthy diet, exercise regularly, and take calcium and vitamin D supplements if necessary."
+  },
+  {
+    "Disease": "Dwarfism",
+    "Symptoms": [
+      "short height",
+      "small stature",
+      "disproportionate body"
+    ],
+    "Precaution": "Regular medical checkups and genetic counseling"
+  },
+  {
+    "Disease": "Turner Syndrome",
+    "Symptoms": [
+      "short height",
+      "webbed neck",
+      "broad chest"
+    ],
+    "Precaution": "Hormone replacement therapy and regular medical checkups"
+  },
+  {
+    "Disease": "Growth Hormone Deficiency",
+    "Symptoms": [
+      "short height",
+      "delayed puberty",
+      "weak muscles"
+    ],
+    "Precaution": "Growth hormone therapy and regular medical checkups"
   }
 ]

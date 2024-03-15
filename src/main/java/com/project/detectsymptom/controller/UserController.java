@@ -110,13 +110,13 @@ public class UserController {
 
     }
 
-
+    int age = 1;
     @PostMapping("/test")
     public ResponseEntity<?> test(@RequestBody List<String> symptoms) {
 
         Map<String , List<String>> analyzer;
         try {
-            analyzer = jsonService.analyzeUserSymptoms(symptoms); // Use the injected service
+            analyzer = jsonService.analyzeUserSymptoms(symptoms , age); // Use the injected service
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

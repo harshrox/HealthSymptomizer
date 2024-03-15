@@ -24,8 +24,18 @@ public class JSON_Service {
     @Autowired
     private DataUpdaterService dataUpdaterService;
 
-    public Map<String, List<String>> analyzeUserSymptoms(List<String> userSymptoms) throws Exception {
-        String filePath = "data/data.json";
+    public Map<String, List<String>> analyzeUserSymptoms(List<String> userSymptoms , int age) throws Exception {
+        String filePath;
+        if(age<=2){
+            filePath = "data/child.json";
+        }
+        else if(age>2 && age<=5){
+            filePath = "data/2monthsTo5Years.json";
+        }
+        else{
+            filePath = "data/data.json";
+        }
+
         JSONParser parser = new JSONParser();
         JSONArray diseases = null;
         String jsonData;
@@ -50,9 +60,13 @@ public class JSON_Service {
             List<String> diseaseSymptomsList = (List<String>) diseaseSymptoms.stream().map(Object::toString).collect(Collectors.toList());
 
             List<String> output = check.match(diseaseName, diseaseSymptomsList, userSymptoms);
-            if (Double.parseDouble(output.get(1)) > 20) {
+            if (Double.parseDouble(output.get(1)) > 0) {
                 diseaseScores.put(output.get(0), Arrays.asList(output.get(1) , precaution));
             }
+        }
+
+        if(age <=5 ){
+            return diseaseScores;
         }
 
         if (diseaseScores.size() == 0) {
@@ -76,7 +90,7 @@ public class JSON_Service {
                     dataUpdaterService.updateData(diseaseArray.get(i));
                 }
 
-                return analyzeUserSymptoms(userSymptoms);
+                return analyzeUserSymptoms(userSymptoms , age);
 
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
