@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="title">Symptoms Checker</div>
-    <form id="regForm" action="test" method="post">
+    <form id="regForm"   onsubmit="submitData()">
 
         <div  class="tab">
 
@@ -17,7 +17,7 @@
             <div class="user__details">
                 <div class="input__box">
                     <h3 class="details">Full Name</h3>
-                    <input type="text" placeholder="E.g: Harsh bhai ke aangge koi bol skta hai kya" required>
+                    <input type="text" name="username" class="username" placeholder="E.g: Harsh bhai ke aangge koi bol skta hai kya" required>
                 </div>
             </div>
 
@@ -97,6 +97,9 @@
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
             <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
         </div>
+    </div>
+    <div id="resultContainer">
+
     </div>
 
 

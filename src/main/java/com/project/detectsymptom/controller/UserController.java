@@ -108,9 +108,30 @@ public class UserController {
 
     }
 
-    int age = 1;
-    @PostMapping("/test")
-    public ResponseEntity<?> test(@RequestBody List<String> symptoms) {
+//    @PostMapping("/test")
+//    public ResponseEntity<?> test(@RequestBody List<String> symptoms) {
+//
+//        Map<String , List<String>> analyzer;
+//        try {
+//            analyzer = jsonService.analyzeUserSymptoms(symptoms , age); // Use the injected service
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        return new ResponseEntity<>(analyzer, HttpStatus.OK);
+//    }
+
+    @PostMapping("/submit")
+        public ResponseEntity<?> submit(@RequestBody UserModel user ){
+
+         String username = user.getUsername();
+         String gender = user.getGender();
+        int age = Integer.parseInt(user.getAge());
+
+        System.out.println(username+" "+gender+" "+age);
+
+        List<String> symptoms = user.getSymptoms();
+        System.out.println(symptoms);
 
         Map<String , List<String>> analyzer;
         try {
@@ -120,15 +141,13 @@ public class UserController {
         }
 
         return new ResponseEntity<>(analyzer, HttpStatus.OK);
-    }
-
-    @PostMapping("/result")
-    public void result(@ModelAttribute UserModel user) {
-
-        System.out.println(user.toString());
 
 
-    }
+
+
+
+        }
+
 
 
 }

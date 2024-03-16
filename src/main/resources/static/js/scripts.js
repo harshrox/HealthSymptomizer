@@ -35,57 +35,23 @@ function nextPrev(n) {
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
+
   currentTab = currentTab + n;
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
+   currentTab=0
+
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
+    document.getElementById("regForm").dispatchEvent(new Event('submit'));
+
+
+
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
-//function addButton() {
-//
-//if(count<5){
-//// Create a new  div element
-//var divElement = document.createElement('div');
-//divElement.classList.add('input__box');
-//
-//
-////create a new input element.
-//var newInputElement= document.createElement('input')
-//
-//// Optionally, set attributes for the new element
-//newInputElement.setAttribute('type', 'text');
-//newInputElement.setAttribute('placeholder', 'Fever');
-//newInputElement.setAttribute('required', '');
-//
-//// Append the input element to the div element
-//divElement.appendChild(newInputElement);
-//
-//// Append the new div element to an existing element in the DOM
-//var parentElement = document.getElementById('add_input');
-//parentElement.appendChild(divElement);
-//}
-//else{
-//var divElement = document.createElement('h1');
-//    divElement.textContent = "Too many symptoms you gonna die ! pray to god or we will meet in hell";
-//    var parentElement = document.getElementById('add_input');
-//    parentElement.appendChild(divElement)
-//
-//
-//
-//
-//
-//}
-//count=count+1
-//console.log(count)
-//
-//
-//
-//
-//}
+
+
 
 
 function validateForm() {
@@ -135,6 +101,8 @@ function createInputWithDatalist() {
     newInputElement.setAttribute('type', 'text');
     newInputElement.setAttribute('placeholder', 'Symptoms');
     newInputElement.setAttribute('list', 'symptoms_' + Date.now()); // Ensure unique ID for each datalist
+    newInputElement.classList.add('myInput');
+
 
     // Create a new datalist element
     var datalistElement = document.createElement('datalist');
@@ -175,5 +143,96 @@ function addButton() {
     }
    }
     count=count+1
+}
+
+async function submitData(){
+console.log("Submit data daba diya user ne.")
+var symptoms = Array.from(document.getElementsByClassName("myInput")).map(function(element) {
+    return element.value.trim();
+  });
+
+      // Gather username, age, and gender
+      var username = document.querySelector('input[name="username"]').value.trim();
+      var ageinstring = document.querySelector('input[name="age"]:checked').id;
+      var gender = document.querySelector('input[name="gender"]:checked').id;
+      var age=0
+      if(ageinstring==="dot-3"){
+        age=0
+      }
+      if(ageinstring==="dot-4"){
+      age=1
+      }
+      if(ageinstring==="dot-5"){
+      age=10
+      }
+
+      if(gender==="dot-1") gender="Male"
+      if(gender==="dot-2") gender="Female"
+
+
+
+
+
+
+ var formattedSymptoms = '"Symptoms": [\n' + symptoms.join(', \n') + '\n]';
+
+   // Construct data object
+       var data = {
+           username: username,
+           age: age,
+           gender: gender,
+           symptoms: symptoms
+       };
+ try {
+        // Send data to server
+        const response = await fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        // Parse response as JSON
+        const responseData = await response.json();
+        console.log('Success:', responseData);
+        // Get the container element where the table will be inserted
+        const container = document.getElementById('resultContainer');
+
+        // Create a table element
+        const table = document.createElement('table');
+
+        // Create table header
+        const headerRow = table.insertRow();
+        const headerCell1 = headerRow.insertCell(0);
+        const headerCell2 = headerRow.insertCell(1);
+        const headerCell3 = headerRow.insertCell(2);
+        headerCell1.innerHTML = '<b>Disease Name</b>';
+        headerCell2.innerHTML = '<b>Percentage</b>';
+        headerCell3.innerHTML = '<b>Precautions</b>';
+
+        // Loop through the response data and populate the table rows
+        for (const disease in responseData) {
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            cell1.textContent = disease;
+            cell2.textContent = responseData[disease][0] + '%';
+            cell3.textContent = responseData[disease][1];
+        }
+
+        // Append the table to the container element
+        container.appendChild(table);
+
+        // Handle success response here
+
+    } catch (error) {
+        console.error('Error:', error);
+        // Handle error here
+    }
+
+
+return true;
 }
 

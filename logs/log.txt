@@ -10,3 +10,17 @@ Disease added: Osteoporosis
 Disease added: Dwarfism
 Disease added: Turner Syndrome
 Disease added: Growth Hormone Deficiency
+Disease added: Hashimoto's thyroiditis
+Disease added: Rheumatoid arthritis
+Disease added: Angina
+Disease added: Dengue
+Disease added: Malaria
+Disease added: Typhoid
+Disease added: Chikungunya
+Disease added: Ebola
+Disease added: Alopecia Areata
+Disease added: Telogen Effluvium
+Disease added: Androgenic Alopecia
+Disease added: Stroke
+Disease added: Meningitis
+Disease added: Encephalitis
