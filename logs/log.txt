@@ -24,3 +24,4 @@ Disease added: Androgenic Alopecia
 Disease added: Stroke
 Disease added: Meningitis
 Disease added: Encephalitis
+Disease added: Peptic Ulcer Disease
