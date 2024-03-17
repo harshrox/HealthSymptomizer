@@ -126,7 +126,7 @@ public class UserController {
 
          String username = user.getUsername();
          String gender = user.getGender();
-        int age = Integer.parseInt(user.getAge());
+         int age = Integer.parseInt(user.getAge());
 
         System.out.println(username+" "+gender+" "+age);
 

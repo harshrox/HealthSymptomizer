@@ -27,7 +27,7 @@ public class JSON_Service {
     public Map<String, List<String>> analyzeUserSymptoms(List<String> userSymptoms , int age) throws Exception {
         String filePath;
         if(age<=2){
-            filePath = "data/child.json";
+            filePath = "data/upto2months.json";
         }
         else if(age>2 && age<=5){
             filePath = "data/2monthsTo5Years.json";
@@ -60,16 +60,12 @@ public class JSON_Service {
             List<String> diseaseSymptomsList = (List<String>) diseaseSymptoms.stream().map(Object::toString).collect(Collectors.toList());
 
             List<String> output = check.match(diseaseName, diseaseSymptomsList, userSymptoms);
-            if (Double.parseDouble(output.get(1)) > 0) {
-                diseaseScores.put(output.get(0), Arrays.asList(output.get(1) , precaution));
+            if (Double.parseDouble(output.get(1)) > 15) {
+                diseaseScores.put(output.get(0), Arrays.asList(output.get(1) , precaution , String.valueOf(diseaseSymptoms)));
             }
         }
 
-        if(age <=5 ){
-            return diseaseScores;
-        }
-
-        if (diseaseScores.size() == 0) {
+        if (diseaseScores.size() == 0 && age>5) {
             String prompt = "Suggest all the probable diseases based on the symptoms provided. Return the results in json form having 3 fixed keys , Disease : string , Symptoms : array of strings and Precaution(one single string). Make sure NOT to return in markdown format but as raw string of array of jsons." +
                     "Also, write the other related symptoms(one/two words only) too since provided symptoms may be very few. The result should be of type json array and must follow the given format. It should not deviate from the instructions as the returned response is assumed to be json array and will be further used in the project, wrong format can crash the project. Do not include any other words or phrases just the json array." +
                     "The symptoms for the disease to be predicted are " + userSymptoms + ", make sure to include these symptoms too in the ouput";
@@ -110,9 +106,14 @@ public class JSON_Service {
                 Double.parseDouble(entry1.getValue().get(0))));
 
         // Create a LinkedHashMap to store the sorted entries
+        int count = 0;    // To show top 7 most probable diseases
         LinkedHashMap<String, List<String>> sortedScores = new LinkedHashMap<>();
         for (Map.Entry<String, List<String>> entry : entryList) {
             sortedScores.put(entry.getKey(), entry.getValue());
+            count++;
+            if(count == 7){
+                break;
+            }
         }
 
 
