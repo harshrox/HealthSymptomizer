@@ -25,3 +25,12 @@ Disease added: Stroke
 Disease added: Meningitis
 Disease added: Encephalitis
 Disease added: Peptic Ulcer Disease
+
+Disease added: Thyroid
+Disease added: PCOS
+Disease added: Menopause
+Disease added: Stress
+Disease added: Cancer
+Disease added: Diabetes
+Disease added: HIV/AIDS
+Disease added: Tuberculosis
