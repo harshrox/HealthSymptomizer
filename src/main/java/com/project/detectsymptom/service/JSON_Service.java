@@ -23,6 +23,8 @@ public class JSON_Service {
     private ApplicationContext context;
     @Autowired
     private DataUpdaterService dataUpdaterService;
+    @Autowired
+    private OptionsUpdaterService optionsUpdaterService;
 
     public Map<String, List<String>> analyzeUserSymptoms(List<String> userSymptoms , int age) throws Exception {
         String filePath;
@@ -84,6 +86,13 @@ public class JSON_Service {
                 JsonNode diseaseArray = objectMapper.readValue(jsonArrayString, JsonNode.class);
                 for (int i = 0; i < diseaseArray.size(); i++) {
                     dataUpdaterService.updateData(diseaseArray.get(i));
+                    JsonNode disease = diseaseArray.get(i);
+                    JsonNode symptomsNode = disease.get("Symptoms");
+                    if (symptomsNode.isArray()) {
+                        for (JsonNode symptom : symptomsNode) {
+                            optionsUpdaterService.updateOptions(symptom.asText());
+                        }
+                    }
                 }
 
                 return analyzeUserSymptoms(userSymptoms , age);

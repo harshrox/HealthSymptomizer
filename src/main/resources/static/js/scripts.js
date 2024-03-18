@@ -1,7 +1,28 @@
 //var optionsArray = new Set(["Deep or extensive mouth ulcers","weight gain","painful walking","fluid overload","redness of eyes","stomach bleeding","phlegm","increased appetite","No attachment at all","muscle wasting","Ear pain","lack of concentration","Not well attached to breast","yellowing of eyes","extra marital contacts","swelling of stomach","altered sensorium","Severe chest indrawing","Not able to drink","drinking poorly","distention of abdomen","blurred and distorted vision","enlarged thyroid","knee pain","Pus is seen draining from the ear and discharge is reported for less than 14 days","joint pain","slurred speech","diarrhoea","abnormal menstruation","Lethargic or unconscious","continuous sneezing","Temperature between 35.5 - 36.40C","Restless, irritable","Stiff neck","cramps","coma","indigestion","Sunken eyes","prominent veins on calf","Visible severe wasting","constipation","unsteadiness","runny nose","irritability","rusty sputum","Mouth ulcers","swollen extremeties","chest pain","Not able to feed","bruising","Stridor in calm child","bladder discomfort","puffy face and eyes","irregular sugar level","yellow crust ooze","Oedema of both feet","skin rash","acute liver failure","drying and tingling lips","Not suckling effectively","pain behind the eyes","skin peeling","swelling joints","spotting  urination","high fever","throat irritation","polyuria","receiving unsterile injections","small dents in nails","movement stiffness","Skin pinch goes back slowly","Fever (by history or feels hot or temperature 37.5°C or above)","red spots over body","irritation in anus","Palms and soles yellow","excessive hunger","Axillary temperature 37.5oC or above (or feels hot to touch)","Less than 10 skin pustules","dischromic  patches","continuous feel of urine","patches in throat","scurring","family history","Bulging fontanelle","neck pain","inflammatory nails","lethargy","restlessness","malaise","Pus discharge from ear","mild fever","Fast breathing (60 breaths per minute or more)","fast heart rate","Nasal flaring","receiving blood transfusion","mucoid sputum","pus filled pimples","watering from eyes","Skin pinch goes back very slowly","Less than normal movements","back pain","shivering","passage of gases","Convulsions","anxiety","bloody stool","loss of appetite","Tender swelling behind the ear","pain in anal region","vomiting","internal itching","Blood in the stool","congestion","mood swings","stomach pain","No dehydration","Breast or nipple problems","yellowish skin","Some palmar pallor","weight loss","Receives other foods or drinks","Pus draining from the eye","depression","sunken eyes","swollen blood vessels","headache","muscle weakness","burning micturition","breathlessness","fatigue","history of alcohol consumption","Temperature less than 35.5oC (or feels cold to touch)","Umbilicus red or draining pus","ulcers on tongue","Severe palmar pallor","chills","muscle pain","palpitations","dizziness","10 or more skin pustules or a big boil","nausea","weakness in limbs","Grunting","spinning movements","yellow urine","weakness of one body side","itching","sinus pressure","visual disturbances","Diarrhoea lasting 14 days or more","cough","loss of smell","foul smell of urine","nodal skin eruptions","hip joint pain","abdominal pain","Fast breathing","cold hands and feets","Pus is seen draining from the ear and discharge is reported for 14 days or more","Less than 8 breastfeeds in 24 hours","obesity","blister","belly pain","pain during bowel movements","blood in sputum","blackheads","dark urine","swelled lymph nodes","swollen legs","Drinks eagerly, thirsty","Dehydration present","silver like dusting","Thrush (ulcers or white patches in mouth)","stiff neck","Chest indrawing","Any general danger sign","Clouding of cornea","Age less than 24 hours","Severely Underweight ( < -3 SD)","sweating","acidity","red sore around nose","toxic look (typhos)","loss of balance","dehydration","Age 14 days or more","brittle nails"]);
+const optionsArray = []
+async function fetchData() {
+    try {
+        console.log("Inside fetchData")
+        const response = await fetch("dataOptions.json");
+        const data = await response.json();
+        data["options"].forEach(function(option) {
+            optionsArray.push(option)
+        });
+        console.log("Final size of optionsArray: ", optionsArray.length)
 
+    } catch (error) {
+        console.error('Error fetching or parsing JSON:', error);
+    }
+}
+var dataOptionsArray = new Set();
+fetchData().then(() => {
 
-var dataOptionsArray = new Set(["silver like dusting","breathlessness","nausea","continuous feel of urine","bladder discomfort","muscle wasting","hip joint pain","bruising","mucoid sputum","back pain","increased appetite","runny nose","unsteadiness","congestion","dischromic  patches","prominent veins on calf","scurring","muscle weakness","itching","weakness of one body side","bloody stool","swollen legs","redness of eyes","dehydration","puffy face and eyes","internal itching","red spots over body","irritability","constipation","loss of appetite","stomach pain","malaise","yellow crust ooze","irregular sugar level","yellow urine","pain in anal region","palpitations","spinning movements","blood in sputum","blurred and distorted vision","receiving blood transfusion","sweating","skin peeling","lethargy","polyuria","indigestion","vomiting","mood swings","family history","pus filled pimples","diarrhoea","abnormal menstruation","inflammatory nails","yellowish skin","depression","sinus pressure","foul smell of urine","distention of abdomen","pain behind the eyes","toxic look (typhos)","blackheads","movement stiffness","fatigue","loss of balance","extra marital contacts","cramps","chest pain","receiving unsterile injections","stomach bleeding","pain during bowel movements","excessive hunger","swelling of stomach","mild fever","sunken eyes","history of alcohol consumption","throat irritation","acidity","fluid overload","anxiety","joint pain","weight gain","fast heart rate","weakness in limbs","burning micturition","knee pain","high fever","swelling joints","muscle pain","ulcers on tongue","restlessness","swollen extremeties","lack of concentration","abdominal pain","headache","brittle nails","coma","rusty sputum","cough","passage of gases","enlarged thyroid","red sore around nose","irritation in anus","watering from eyes","spotting  urination","nodal skin eruptions","slurred speech","patches in throat","acute liver failure","drying and tingling lips","skin rash","cold hands and feets","swollen blood vessels","yellowing of eyes","dark urine","neck pain","continuous sneezing","phlegm","obesity","belly pain","chills","altered sensorium","stiff neck","shivering","painful walking","small dents in nails","swelled lymph nodes","loss of smell","dizziness","visual disturbances","weight loss","blister"]);
+    optionsArray.forEach(function(option) {
+        dataOptionsArray.add(option);
+    });
+    optionsArray.splice(0, optionsArray.length);
+});
+
 var upto2OptionsArray = new Set(["Nasal flaring","Age 14 days or more","Pus discharge from ear","No attachment at all","Receives other foods or drinks","Not able to feed","Not well attached to breast","Age less than 24 hours","Grunting","Axillary temperature 37.5oC or above (or feels hot to touch)","Thrush (ulcers or white patches in mouth)","Palms and soles yellow","Temperature between 35.5 - 36.40C","Not suckling effectively","Breast or nipple problems","Temperature less than 35.5oC (or feels cold to touch)","10 or more skin pustules or a big boil","Less than 8 breastfeeds in 24 hours","Umbilicus red or draining pus","Lethargic or unconscious","Fast breathing (60 breaths per minute or more)","Severe chest indrawing","Convulsions","Bulging fontanelle","Sunken eyes","Less than normal movements","Diarrhoea lasting 14 days or more","Blood in the stool","Less than 10 skin pustules"]);
 var twoto5OptionsArray = new Set(["No dehydration","Bulging fontanelle","Lethargic or unconscious","Fever (by history or feels hot or temperature 37.5°C or above)","Drinks eagerly, thirsty","Pus is seen draining from the ear and discharge is reported for 14 days or more","Oedema of both feet","drinking poorly","Restless, irritable","Not able to drink","Some palmar pallor","Stiff neck","Skin pinch goes back slowly","Ear pain","Skin pinch goes back very slowly","Severe palmar pallor","Pus draining from the eye","Clouding of cornea","Visible severe wasting","Chest indrawing","Any general danger sign","Deep or extensive mouth ulcers","Dehydration present","Stridor in calm child","Blood in the stool","Tender swelling behind the ear","Mouth ulcers","Pus is seen draining from the ear and discharge is reported for less than 14 days","Severely Underweight ( < -3 SD)","Sunken eyes","Fast breathing"]);
 
@@ -224,7 +245,13 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
 
         // Parse response as JSON
         const responseData = await response.json();
-        console.log('Success:', responseData);
+        console.log('Success:', responseData)
+        fetchData().then(() => {
+         optionsArray.forEach(function(option) {
+             dataOptionsArray.add(option);
+         });
+     });
+
         // Get the container element where the table will be inserted
         const container = document.getElementById('resultContainer');
 
@@ -244,17 +271,6 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
 
         // Loop through the response data and populate the table rows
         for (const disease in responseData) {
-           /*
-            //adding each symptom to optionsArray
-            const optionsString = responseData[disease][2];
-            const options = JSON.parse(optionsString);
-            console.group("optionsArray");
-            console.log(optionsArray.size);
-            options.forEach(function(option) {
-                optionsArray.add(option);
-                console.log(option);
-            });
-            console.log(optionsArray.size) */
             const row = table.insertRow();
             const cell1 = row.insertCell(0);
             const cell2 = row.insertCell(1);
@@ -268,6 +284,7 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
 
         // Append the table to the container element
         container.appendChild(table);
+
 
         // Handle success response here
 
