@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/styles.css">
 <body>
 
-<div class="container">
+<div class="container" id="contain">
     <div class="title">Symptoms Checker</div>
     <form id="regForm"   onsubmit="submitData()">
 
@@ -92,16 +92,24 @@
 
     </form>
 
-    <div style="overflow:auto;">
+
+
+
+    <div >
         <div style="float:right;">
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
             <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
         </div>
     </div>
-    <div id="resultContainer">
 
-    </div>
 
+
+
+
+</div>
+
+
+<div id="resultContainer">
 
 </div>
     <script src="js/scripts.js"></script>

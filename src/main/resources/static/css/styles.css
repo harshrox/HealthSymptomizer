@@ -18,17 +18,20 @@
 body {
   display: flex;
   height: 100vh;
+  flex-direction: column;
   justify-content: center; /*center vertically */
   align-items: center; /* center horizontally */
   background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
   padding: 10px;
+  overflow:scroll;
 }
 .title{
 padding:0 0  2rem 0;
 }
 /* container and form */
 .container {
-  max-width: 700px;
+  max-width: 50%;
+
   width: 100%;
   background: #fff;
   padding: 25px 30px;
