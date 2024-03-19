@@ -23,13 +23,15 @@ public class JSON_Service {
     private ApplicationContext context;
     @Autowired
     private DataUpdaterService dataUpdaterService;
+    @Autowired
+    private OptionsUpdaterService optionsUpdaterService;
 
     public Map<String, List<String>> analyzeUserSymptoms(List<String> userSymptoms , int age) throws Exception {
         String filePath;
-        if(age<=2){
+        if(age==0){
             filePath = "data/upto2months.json";
         }
-        else if(age>2 && age<=5){
+        else if(age==1){
             filePath = "data/2monthsTo5Years.json";
         }
         else{
@@ -76,23 +78,44 @@ public class JSON_Service {
             String response = responseFuture.join();
 
             try {
-                ObjectMapper objectMapper = new ObjectMapper();
-                JsonNode jsonNode = objectMapper.readTree(response);
-                JsonNode contentNode = jsonNode.at("/candidates/0/content/parts/0/text");
-                System.out.println(contentNode);
-                String jsonArrayString = contentNode.asText();
-                JsonNode diseaseArray = objectMapper.readValue(jsonArrayString, JsonNode.class);
-                for (int i = 0; i < diseaseArray.size(); i++) {
-                    dataUpdaterService.updateData(diseaseArray.get(i));
-                }
+                if(response.length()>0){
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    JsonNode jsonNode = objectMapper.readTree(response);
+                    JsonNode contentNode = jsonNode.at("/candidates/0/content/parts/0/text");
+                    System.out.println(contentNode);
+                    String jsonArrayString = contentNode.asText();
+                    JsonNode diseaseArray = objectMapper.readValue(jsonArrayString, JsonNode.class);
+                    for (int i = 0; i < diseaseArray.size(); i++) {
+                        dataUpdaterService.updateData(diseaseArray.get(i));
+                        JsonNode disease = diseaseArray.get(i);
+                        JsonNode symptomsNode = disease.get("Symptoms");
+                        if (symptomsNode.isArray()) {
+                            for (JsonNode symptom : symptomsNode) {
+                                optionsUpdaterService.updateOptions(symptom.asText());
+                            }
+                        }
+                    }
 
-                return analyzeUserSymptoms(userSymptoms , age);
+                    return analyzeUserSymptoms(userSymptoms , age);
+                }
+                else{
+                    Map<String , List<String>> empty = new HashMap<>();
+                    empty.put("Either server error or no dataset found" , Arrays.asList("0","Try running again","[]"));
+                    System.out.println(empty);
+                    return empty;
+                }
 
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+        else if(diseaseScores.size()==0 && age<5){
+            Map<String , List<String>> empty = new HashMap<>();
+            empty.put("Either server error or no dataset found" , Arrays.asList("0","Try running again","[]"));
+            System.out.println(empty);
+            return empty;
         }
 
         // Sorting the hashmap on the basis of percentage probability
@@ -116,7 +139,7 @@ public class JSON_Service {
             }
         }
 
-
+        System.out.println(sortedScores);
         return sortedScores;
     }
 }

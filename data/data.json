@@ -578,91 +578,25 @@
     "Precaution": "Avoid alcohol, NSAIDs, and smoking. Eat a healthy diet and maintain a healthy weight."
   },
   {
-    "Disease": "Thyroid",
+    "Disease": "Depression",
     "Symptoms": [
-      "tension",
-      "hairfall",
-      "weight gain/loss",
+      "reduced appetite",
+      "changes in sleep",
+      "irritability",
+      "lack of motivation",
+      "low self-esteem"
+    ],
+    "Precaution": "Seek professional help, engage in regular exercise, get enough sleep, eat a healthy diet, and avoid alcohol and drugs"
+  },
+  {
+    "Disease": "Thyroid Problem",
+    "Symptoms": [
       "fatigue",
-      "constipation/diarrhea"
+      "weight gain or loss",
+      "changes in mood",
+      "skin problems",
+      "difficulty concentrating"
     ],
-    "Precaution": "Consult a doctor and get thyroid levels checked."
-  },
-  {
-    "Disease": "PCOS",
-    "Symptoms": [
-      "tension",
-      "hairfall",
-      "irregular periods",
-      "weight gain",
-      "acne"
-    ],
-    "Precaution": "Consult a doctor and get hormone levels checked."
-  },
-  {
-    "Disease": "Menopause",
-    "Symptoms": [
-      "tension",
-      "hairfall",
-      "hot flashes",
-      "night sweats",
-      "mood swings"
-    ],
-    "Precaution": "Consult a doctor to discuss hormone replacement therapy."
-  },
-  {
-    "Disease": "Stress",
-    "Symptoms": [
-      "tension",
-      "hairfall",
-      "anxiety",
-      "insomnia",
-      "headaches"
-    ],
-    "Precaution": "Exercise regularly, get enough sleep, and eat a healthy diet."
-  },
-  {
-    "Disease": "Cancer",
-    "Symptoms": [
-      "weight loss",
-      "fatigue",
-      "pain",
-      "nausea",
-      "vomiting"
-    ],
-    "Precaution": "Avoid exposure to carcinogens, eat a healthy diet, and get regular exercise."
-  },
-  {
-    "Disease": "Diabetes",
-    "Symptoms": [
-      "weight loss",
-      "excessive thirst",
-      "frequent urination",
-      "hunger",
-      "fatigue"
-    ],
-    "Precaution": "Eat a healthy diet, get regular exercise, and maintain a healthy weight."
-  },
-  {
-    "Disease": "HIV/AIDS",
-    "Symptoms": [
-      "weight loss",
-      "fever",
-      "chills",
-      "muscle aches",
-      "joint pain"
-    ],
-    "Precaution": "Practice safe sex, get tested for HIV, and take medication if you are infected."
-  },
-  {
-    "Disease": "Tuberculosis",
-    "Symptoms": [
-      "weight loss",
-      "cough",
-      "fever",
-      "night sweats",
-      "chest pain"
-    ],
-    "Precaution": "Get vaccinated against tuberculosis, avoid exposure to people who are sick with tuberculosis, and take medication if you are infected."
+    "Precaution": "Get your thyroid levels checked, take medication as prescribed, and follow a healthy lifestyle"
   }
 ]
