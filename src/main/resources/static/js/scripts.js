@@ -275,6 +275,10 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
           headerCell2.innerHTML = '<p align="center"><b>Percentage</b></p>';
           headerCell3.innerHTML = '<p align="center"><b>Symptoms</b></p>';
           headerCell4.innerHTML = '<p align="center"><b>Precautions</b></p>';
+     headerCell1.innerHTML = '<p style="padding: 5px; font-size: 20px; "><b>Disease</b></p>';
+     headerCell2.innerHTML = '<p style="padding: 5px; font-size: 20px; "><b>Percentage</b></p>';
+     headerCell3.innerHTML = '<p style="padding: 5px; font-size: 20px; "><b>Symptoms</b></p>';
+     headerCell4.innerHTML = '<p style="padding: 5px; font-size: 20px; "><b>Precautions</b></p>';
 
         // Loop through the response data and populate the table rows
         for (const disease in responseData) {
@@ -283,10 +287,11 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
             const cell2 = row.insertCell(1);
             const cell3 = row.insertCell(2);
             const cell4 = row.insertCell(3);
-            cell1.textContent = disease;
-            cell2.textContent = responseData[disease][0] + '%';
-            cell3.textContent = JSON.parse(responseData[disease][2]).join(", ");
-            cell4.textContent = responseData[disease][1];
+            cell1.innerHTML = `<p style="padding: 5px; font-size: 20px; ">${disease}</p>`;
+            cell2.innerHTML = `<p style="padding: 5px; font-size: 20px; ">${responseData[disease][0]}%</p>`;
+            cell3.innerHTML = `<p style="padding: 5px; font-size: 20px; ">${JSON.parse(responseData[disease][2]).join(", ")}</p>`;
+            cell4.innerHTML = `<p style="padding: 5px; font-size: 20px; ">${responseData[disease][1]}</p>`;
+
         }
 
           // Append the table to the container element
@@ -299,6 +304,7 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
 
      const generateReportButton = document.createElement('button');
      generateReportButton.textContent = 'Generate Report';
+     generateReportButton.classList.add('btn');
      generateReportButton.onclick = function() {
          // Convert the table's HTML to a string
          console.log("Button successfull")

@@ -22,7 +22,7 @@ $heading-color: #43BAC0;
 
 body {
   display: flex;
-  height: 100vh;
+  height: auto;
   flex-direction: column;
   justify-content: center; /*center vertically */
   align-items: center; /* center horizontally */
