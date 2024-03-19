@@ -26,10 +26,10 @@ public class JSON_Service {
 
     public Map<String, List<String>> analyzeUserSymptoms(List<String> userSymptoms , int age) throws Exception {
         String filePath;
-        if(age<=2){
+        if(age==0){
             filePath = "data/upto2months.json";
         }
-        else if(age>2 && age<=5){
+        else if(age==1){
             filePath = "data/2monthsTo5Years.json";
         }
         else{
