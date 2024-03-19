@@ -12,6 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 import java.util.List;
 import java.util.Map;
@@ -147,6 +156,21 @@ public class UserController {
 
 
         }
+
+    @PostMapping("/generate-report")
+    public byte[] generateReport(@RequestBody String html) throws IOException {
+        // Create a PDF renderer
+        System.out.println(html);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PdfRendererBuilder builder = new PdfRendererBuilder();
+        builder.withHtmlContent(html, null);
+        builder.toStream(outputStream);
+        builder.run();
+
+        // Return the PDF as a byte array
+        return outputStream.toByteArray();
+    }
+
 
 
 
