@@ -157,7 +157,7 @@ function createInputWithDatalist() {
 flag=0
 function addButton() {
 
-   if(count<5){
+   if(count<10){
     createInputWithDatalist();
     }
     else{
@@ -175,7 +175,7 @@ function addButton() {
 }
 
 async function submitData(){
-console.log("Submitted.")
+
 var symptoms = Array.from(document.getElementsByClassName("myInput")).map(function(element) {
     return element.value.trim();
   });
@@ -222,54 +222,55 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
             body: JSON.stringify(data)
         });
 
-        // Parse response as JSON
-        const responseData = await response.json();
-        console.log('Success:', responseData);
+                // Parse response as JSON
+                const responseData = await response.json();
+                console.log('Success:', responseData)
+
+
+
         // Get the container element where the table will be inserted
-        const container = document.getElementById('resultContainer');
+          const container = document.getElementById('resultContainer');
+          document.getElementById('resultContainer').style.display = 'block';
+          const heading1 = document.createElement('h1');
+          heading1.innerHTML = `<h3>Hi ${username} . These are your predictable diseases.</h3>`;
+          container.appendChild(heading1);
 
-        // Create a table element
-        const table = document.createElement('table');
 
-        // Create table header
-        const headerRow = table.insertRow();
-        const headerCell1 = headerRow.insertCell(0);
-        const headerCell2 = headerRow.insertCell(1);
-        const headerCell3 = headerRow.insertCell(2);
-        const headerCell4 = headerRow.insertCell(3);
-        headerCell1.innerHTML = '<p align="center"><b>Disease</b></p>';
-        headerCell2.innerHTML = '<p align="center"><b>Percentage</b></p>';
-        headerCell3.innerHTML = '<p align="center"><b>Symptoms</b></p>';
-        headerCell4.innerHTML = '<p align="center"><b>Precautions</b></p>';
 
-        // Loop through the response data and populate the table rows
-        for (const disease in responseData) {
-           /*
-            //adding each symptom to optionsArray
-            const optionsString = responseData[disease][2];
-            const options = JSON.parse(optionsString);
-            console.group("optionsArray");
-            console.log(optionsArray.size);
-            options.forEach(function(option) {
-                optionsArray.add(option);
-                console.log(option);
-            });
-            console.log(optionsArray.size) */
-            const row = table.insertRow();
-            const cell1 = row.insertCell(0);
-            const cell2 = row.insertCell(1);
-            const cell3 = row.insertCell(2);
-            const cell4 = row.insertCell(3);
-            cell1.textContent = disease;
-            cell2.textContent = responseData[disease][0] + '%';
-            cell3.textContent = JSON.parse(responseData[disease][2]).join(", ");
-            cell4.textContent = responseData[disease][1];
-        }
 
-        // Append the table to the container element
-        container.appendChild(table);
 
-        // Handle success response here
+          // Create a table element
+          const table = document.createElement('table');
+
+          // Create table header
+          const headerRow = table.insertRow();
+          const headerCell1 = headerRow.insertCell(0);
+          const headerCell2 = headerRow.insertCell(1);
+          const headerCell3 = headerRow.insertCell(2);
+          const headerCell4 = headerRow.insertCell(3);
+          headerCell1.innerHTML = '<p align="center"><b>Disease</b></p>';
+          headerCell2.innerHTML = '<p align="center"><b>Percentage</b></p>';
+          headerCell3.innerHTML = '<p align="center"><b>Symptoms</b></p>';
+          headerCell4.innerHTML = '<p align="center"><b>Precautions</b></p>';
+
+          // Loop through the response data and populate the table rows
+          for (const disease in responseData) {
+              const row = table.insertRow();
+              const cell1 = row.insertCell(0);
+              const cell2 = row.insertCell(1);
+              const cell3 = row.insertCell(2);
+              const cell4 = row.insertCell(3);
+              cell1.textContent = disease;
+              cell2.textContent = responseData[disease][0] + '%';
+              cell3.textContent = JSON.parse(responseData[disease][2]).join(", ");
+              cell4.textContent = responseData[disease][1];
+          }
+
+          // Append the table to the container element
+          container.appendChild(table);
+
+
+
 
     } catch (error) {
         console.error('Error:', error);
