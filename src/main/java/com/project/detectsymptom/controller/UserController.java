@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -122,15 +124,19 @@ public class UserController {
 //    }
 
     @PostMapping("/submit")
-        public ResponseEntity<?> submit(@RequestBody UserModel user ){
+    public ResponseEntity<?> submit(@RequestBody UserModel user ){
 
-         String username = user.getUsername();
-         String gender = user.getGender();
-         int age = Integer.parseInt(user.getAge());
+        String username = user.getUsername();
+        String gender = user.getGender();
+        int age = Integer.parseInt(user.getAge());
 
         System.out.println(username+" "+gender+" "+age);
 
         List<String> symptoms = user.getSymptoms();
+        // Extracting unique symptoms
+        HashSet<String> uniqueSet = new HashSet<>();
+        uniqueSet.addAll(symptoms);
+        symptoms = new ArrayList<>(uniqueSet);
         System.out.println(symptoms);
 
         Map<String , List<String>> analyzer;
@@ -146,7 +152,7 @@ public class UserController {
 
 
 
-        }
+    }
 
 
 
