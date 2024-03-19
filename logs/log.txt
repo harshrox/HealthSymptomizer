@@ -34,3 +34,19 @@ Disease added: Cancer
 Disease added: Diabetes
 Disease added: HIV/AIDS
 Disease added: Tuberculosis
+Disease added: Telogen Effluvium
+Disease added: Telogen Effluvium
+Disease added: Alopecia Areata
+Disease added: Depression
+Disease added: Thyroid Problem
+Disease added: Nutritional Deficiencies
+Disease added: Chronic Stress
+Disease added: Telogen Effluvium
+Disease added: Alopecia Areata
+Disease added: Chronic Telogen Effluvium
+Disease added: Depression
+Disease added: Anxiety
+Disease added: Iron deficiency
+Disease added: Alopecia Areata
+Disease added: Telogen Effluvium
+Disease added: Androgenic Alopecia
