@@ -1,8 +1,7 @@
 //var optionsArray = new Set(["Deep or extensive mouth ulcers","weight gain","painful walking","fluid overload","redness of eyes","stomach bleeding","phlegm","increased appetite","No attachment at all","muscle wasting","Ear pain","lack of concentration","Not well attached to breast","yellowing of eyes","extra marital contacts","swelling of stomach","altered sensorium","Severe chest indrawing","Not able to drink","drinking poorly","distention of abdomen","blurred and distorted vision","enlarged thyroid","knee pain","Pus is seen draining from the ear and discharge is reported for less than 14 days","joint pain","slurred speech","diarrhoea","abnormal menstruation","Lethargic or unconscious","continuous sneezing","Temperature between 35.5 - 36.40C","Restless, irritable","Stiff neck","cramps","coma","indigestion","Sunken eyes","prominent veins on calf","Visible severe wasting","constipation","unsteadiness","runny nose","irritability","rusty sputum","Mouth ulcers","swollen extremeties","chest pain","Not able to feed","bruising","Stridor in calm child","bladder discomfort","puffy face and eyes","irregular sugar level","yellow crust ooze","Oedema of both feet","skin rash","acute liver failure","drying and tingling lips","Not suckling effectively","pain behind the eyes","skin peeling","swelling joints","spotting  urination","high fever","throat irritation","polyuria","receiving unsterile injections","small dents in nails","movement stiffness","Skin pinch goes back slowly","Fever (by history or feels hot or temperature 37.5°C or above)","red spots over body","irritation in anus","Palms and soles yellow","excessive hunger","Axillary temperature 37.5oC or above (or feels hot to touch)","Less than 10 skin pustules","dischromic  patches","continuous feel of urine","patches in throat","scurring","family history","Bulging fontanelle","neck pain","inflammatory nails","lethargy","restlessness","malaise","Pus discharge from ear","mild fever","Fast breathing (60 breaths per minute or more)","fast heart rate","Nasal flaring","receiving blood transfusion","mucoid sputum","pus filled pimples","watering from eyes","Skin pinch goes back very slowly","Less than normal movements","back pain","shivering","passage of gases","Convulsions","anxiety","bloody stool","loss of appetite","Tender swelling behind the ear","pain in anal region","vomiting","internal itching","Blood in the stool","congestion","mood swings","stomach pain","No dehydration","Breast or nipple problems","yellowish skin","Some palmar pallor","weight loss","Receives other foods or drinks","Pus draining from the eye","depression","sunken eyes","swollen blood vessels","headache","muscle weakness","burning micturition","breathlessness","fatigue","history of alcohol consumption","Temperature less than 35.5oC (or feels cold to touch)","Umbilicus red or draining pus","ulcers on tongue","Severe palmar pallor","chills","muscle pain","palpitations","dizziness","10 or more skin pustules or a big boil","nausea","weakness in limbs","Grunting","spinning movements","yellow urine","weakness of one body side","itching","sinus pressure","visual disturbances","Diarrhoea lasting 14 days or more","cough","loss of smell","foul smell of urine","nodal skin eruptions","hip joint pain","abdominal pain","Fast breathing","cold hands and feets","Pus is seen draining from the ear and discharge is reported for 14 days or more","Less than 8 breastfeeds in 24 hours","obesity","blister","belly pain","pain during bowel movements","blood in sputum","blackheads","dark urine","swelled lymph nodes","swollen legs","Drinks eagerly, thirsty","Dehydration present","silver like dusting","Thrush (ulcers or white patches in mouth)","stiff neck","Chest indrawing","Any general danger sign","Clouding of cornea","Age less than 24 hours","Severely Underweight ( < -3 SD)","sweating","acidity","red sore around nose","toxic look (typhos)","loss of balance","dehydration","Age 14 days or more","brittle nails"]);
 const optionsArray = []
 async function fetchData() {
-    try {
-        console.log("Inside fetchData")
+    try{
         const response = await fetch("dataOptions.json");
         const data = await response.json();
         data["options"].forEach(function(option) {
@@ -285,8 +284,44 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
         // Append the table to the container element
         container.appendChild(table);
 
+     //const { username_, age_, gender_, symptoms_ } = data;
 
-        // Handle success response here
+    console.log(data)
+     //const symptomsString = symptoms_.join(", ");
+
+     const generateReportButton = document.createElement('button');
+     generateReportButton.textContent = 'Generate Report';
+     generateReportButton.onclick = function() {
+         // Convert the table's HTML to a string
+         console.log("Button successfull")
+         const tableHtml = table.outerHTML;
+         // Send the HTML string to the server for conversion to PDF
+         const completeHtml = `<!DOCTYPE html><html lang="en"><head><title>User Report</title><style>body {font-family: Arial, sans-serif;margin: 0;padding: 0;background-color: #f0f0f0;}.container {width: 80%;margin: auto;padding: 20px;background-color: #fff;box-shadow: 0 0 10px rgba(0,0,0,0.1);}h1 {text-align: center;color: #333;}.user-info {margin-bottom: 20px;}.user-info p {margin: 0;padding: 0;}.symptoms {margin-bottom: 20px;}.symptoms ul {list-style-type: none;padding: 0;}.symptoms li {margin-bottom: 10px;}.table-container {overflow-x: auto;}table {width: 100%;border-collapse: collapse;}th, td {border: 1px solid #ddd;padding: 8px;text-align: left;}th {background-color: #4CAF50;color: white;}</style></head><body><div class="container"><h1>User Report</h1><div class="user-info"><p><strong>Username:</strong> ${username}</p><p><strong>Gender:</strong> ${gender}</p><p><strong>Symptoms Reported:</strong></p><ul class="symptoms">${symptoms.map(symptom => `<li>${symptom}</li>`).join('')}</ul></div><h4>Possible Diseases</h4><br></br><div class="table-container">${tableHtml}</div></div></body></html>`
+
+         fetch('/generate-report', {
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'text/plain'
+             },
+             body: completeHtml
+         }).then(response => {
+             if (response.ok) {
+                 return response.blob();
+             } else {
+                 throw new Error('Error generating report');
+             }
+         }).then(blob => {
+             // Create a link element, set the blob as its href, and programmatically click it to download the PDF
+             const url = window.URL.createObjectURL(blob);
+             const a = document.createElement('a');
+             a.href = url;
+             a.download = 'report.pdf';
+             a.click();
+         }).catch(error => {
+             console.error('Error:', error);
+         });
+     };
+     container.appendChild(generateReportButton);
 
     } catch (error) {
         console.error('Error:', error);
