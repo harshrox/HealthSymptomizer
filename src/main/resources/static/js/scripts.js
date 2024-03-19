@@ -255,7 +255,7 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
           const container = document.getElementById('resultContainer');
           document.getElementById('resultContainer').style.display = 'block';
           const heading1 = document.createElement('h1');
-          heading1.innerHTML = `<h3>Hi ${username} . These are your predictable diseases.</h3>`;
+          heading1.innerHTML = `<h3>Hi ${username} . These are your predicted diseases.</h3>`;
           container.appendChild(heading1);
 
 
