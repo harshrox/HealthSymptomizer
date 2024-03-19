@@ -177,7 +177,7 @@ function createInputWithDatalist() {
 flag=0
 function addButton() {
 
-   if(count<5){
+   if(count<10){
     createInputWithDatalist();
     }
     else{
@@ -195,7 +195,7 @@ function addButton() {
 }
 
 async function submitData(){
-console.log("Submitted.")
+
 var symptoms = Array.from(document.getElementsByClassName("myInput")).map(function(element) {
     return element.value.trim();
   });
@@ -252,21 +252,29 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
      });
 
         // Get the container element where the table will be inserted
-        const container = document.getElementById('resultContainer');
+          const container = document.getElementById('resultContainer');
+          document.getElementById('resultContainer').style.display = 'block';
+          const heading1 = document.createElement('h1');
+          heading1.innerHTML = `<h3>Hi ${username} . These are your predictable diseases.</h3>`;
+          container.appendChild(heading1);
 
-        // Create a table element
-        const table = document.createElement('table');
 
-        // Create table header
-        const headerRow = table.insertRow();
-        const headerCell1 = headerRow.insertCell(0);
-        const headerCell2 = headerRow.insertCell(1);
-        const headerCell3 = headerRow.insertCell(2);
-        const headerCell4 = headerRow.insertCell(3);
-        headerCell1.innerHTML = '<p align="center"><b>Disease</b></p>';
-        headerCell2.innerHTML = '<p align="center"><b>Percentage</b></p>';
-        headerCell3.innerHTML = '<p align="center"><b>Symptoms</b></p>';
-        headerCell4.innerHTML = '<p align="center"><b>Precautions</b></p>';
+
+
+
+          // Create a table element
+          const table = document.createElement('table');
+
+          // Create table header
+          const headerRow = table.insertRow();
+          const headerCell1 = headerRow.insertCell(0);
+          const headerCell2 = headerRow.insertCell(1);
+          const headerCell3 = headerRow.insertCell(2);
+          const headerCell4 = headerRow.insertCell(3);
+          headerCell1.innerHTML = '<p align="center"><b>Disease</b></p>';
+          headerCell2.innerHTML = '<p align="center"><b>Percentage</b></p>';
+          headerCell3.innerHTML = '<p align="center"><b>Symptoms</b></p>';
+          headerCell4.innerHTML = '<p align="center"><b>Precautions</b></p>';
 
         // Loop through the response data and populate the table rows
         for (const disease in responseData) {
@@ -281,8 +289,8 @@ var symptoms = Array.from(document.getElementsByClassName("myInput")).map(functi
             cell4.textContent = responseData[disease][1];
         }
 
-        // Append the table to the container element
-        container.appendChild(table);
+          // Append the table to the container element
+          container.appendChild(table);
 
      //const { username_, age_, gender_, symptoms_ } = data;
 

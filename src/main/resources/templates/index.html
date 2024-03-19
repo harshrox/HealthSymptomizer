@@ -17,7 +17,7 @@
             <div class="user__details">
                 <div class="input__box">
                     <h3 class="details">Full Name</h3>
-                    <input type="text" name="username" class="username" placeholder="Enter Your Name" required>
+                    <input type="text" name="username" class="username" placeholder="E.g: Aryan Dev" required>
                 </div>
             </div>
 
@@ -80,8 +80,8 @@
 
             </div>
             <div>
-                <button type="button" onclick="addButton()">
-                    Add  More Symptoms.
+                <button type="button" class="btn addbtn" onclick="addButton()">
+                   Add Symptoms
                 </button>
             </div>
 
@@ -97,8 +97,8 @@
 
     <div >
         <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <button type="button" id="prevBtn" class="btn"  onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn"  class="btn" onclick="nextPrev(1)">Next</button>
         </div>
     </div>
 
