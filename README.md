@@ -24,19 +24,20 @@ Welcome to HealthSymptomizer, your reliable source for understanding health symp
 
 ## About Us
 
-HealthSymptomizer is developed by a team of healthcare professionals and technology experts dedicated to providing accessible and reliable health information. Our mission is to empower individuals to make informed decisions about their health and well-being.
-
-## Contact Us
-
-For inquiries, feedback, or support, please reach out to us at [cse22055@iiitkalyani.ac.in](mailto:cse22055@iiitkalyani.ac.in). We value your input and strive to provide the best possible user experience.
+HealthSymptomizer is developed by a team of 4th semester students. Our mission is to empower individuals to make informed decisions about their health and well-being.
 
 ## Disclaimer
 
 The information provided on HealthSymptomizer is for educational purposes only and should not replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for personalized medical guidance and treatment.
 
 ## Connect with Us
-- [Harsh]
-- [Ajai](
-- [Mohd kaif]
+
+For inquiries, feedback, or support, please reach out to us at
+
+- [Ayush Bajpai](mailto:cse22030@iiitkalyani.ac.in)
+- [Harsh Anand](mailto:cse22044@iiitkalyani.ac.in)
+- [Aryan Dev](mailto:cse22027@iiitkalyani.ac.in)
+- [Ajay Tiwari](mailto:cse22008@iiitkalyani.ac.in)
+- [Mohd kaif](mailto:cse22055@iiitkalyani.ac.in)
 
 Thank you for choosing HealthSymptomizer. Your health is our priority.
