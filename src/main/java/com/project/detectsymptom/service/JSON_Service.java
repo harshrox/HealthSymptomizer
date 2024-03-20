@@ -62,7 +62,7 @@ public class JSON_Service {
             List<String> diseaseSymptomsList = (List<String>) diseaseSymptoms.stream().map(Object::toString).collect(Collectors.toList());
 
             List<String> output = check.match(diseaseName, diseaseSymptomsList, userSymptoms);
-            if (Double.parseDouble(output.get(1)) > 15) {
+            if (Double.parseDouble(output.get(1)) > 0) {
                 diseaseScores.put(output.get(0), Arrays.asList(output.get(1) , precaution , String.valueOf(diseaseSymptoms)));
             }
         }
