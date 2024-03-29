@@ -1,0 +1,8 @@
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/HealthSymptomizerApplication.java
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/controller/UserController.java
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/model/UserModel.java
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/service/JSON_Service.java
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/service/DataUpdaterService.java
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/service/SymptomMatching.java
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/service/GeminiService.java
+/home/harsh/Downloads/detect-symptom/src/main/java/com/project/detectsymptom/service/OptionsUpdaterService.java

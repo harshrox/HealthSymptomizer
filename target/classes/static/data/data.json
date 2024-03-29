@@ -1,0 +1,602 @@
+[
+  {
+    "Disease": "(vertigo) Paroymsal  Positional Vertigo",
+    "Symptoms": [
+      "vomiting",
+      "headache",
+      "nausea",
+      "spinning movements",
+      "loss of balance",
+      "unsteadiness"
+    ],
+    "Precaution": "lie down, avoid sudden change in body, avoid abrupt head movment, relax"
+  },
+  {
+    "Disease": "AIDS",
+    "Symptoms": [
+      "muscle wasting",
+      "patches in throat",
+      "high fever",
+      "extra marital contacts"
+    ],
+    "Precaution": "avoid open cuts, wear ppe if possible, consult doctor, follow up"
+  },
+  {
+    "Disease": "Acne",
+    "Symptoms": [
+      "skin rash",
+      "pus filled pimples",
+      "blackheads",
+      "scurring"
+    ],
+    "Precaution": "bath twice, avoid fatty spicy food, drink plenty of water, avoid too many products"
+  },
+  {
+    "Disease": "Alcoholic hepatitis",
+    "Symptoms": [
+      "vomiting",
+      "yellowish skin",
+      "abdominal pain",
+      "swelling of stomach",
+      "distention of abdomen",
+      "history of alcohol consumption",
+      "fluid overload"
+    ],
+    "Precaution": "stop alcohol consumption, consult doctor, medication, follow up"
+  },
+  {
+    "Disease": "Allergy",
+    "Symptoms": [
+      "continuous sneezing",
+      "shivering",
+      "chills",
+      "watering from eyes"
+    ],
+    "Precaution": "apply calamine, cover area with bandage, use ice to compress itching"
+  },
+  {
+    "Disease": "Arthritis",
+    "Symptoms": [
+      "muscle weakness",
+      "stiff neck",
+      "swelling joints",
+      "movement stiffness",
+      "painful walking"
+    ],
+    "Precaution": "exercise, use hot and cold therapy, try acupuncture, massage"
+  },
+  {
+    "Disease": "Bronchial Asthma",
+    "Symptoms": [
+      "fatigue",
+      "cough",
+      "high fever",
+      "breathlessness",
+      "family history",
+      "mucoid sputum"
+    ],
+    "Precaution": "switch to loose cloothing, take deep breaths, get away from trigger, seek help"
+  },
+  {
+    "Disease": "Cervical spondylosis",
+    "Symptoms": [
+      "back pain",
+      "weakness in limbs",
+      "neck pain",
+      "dizziness",
+      "loss of balance"
+    ],
+    "Precaution": "use heating pad or cold pack, exercise, take otc pain reliver, consult doctor"
+  },
+  {
+    "Disease": "Chicken pox",
+    "Symptoms": [
+      "itching",
+      "skin rash",
+      "fatigue",
+      "lethargy",
+      "high fever",
+      "headache",
+      "loss of appetite",
+      "mild fever",
+      "swelled lymph nodes",
+      "malaise",
+      "red spots over body"
+    ],
+    "Precaution": "use neem in bathing , consume neem leaves, take vaccine, avoid public places"
+  },
+  {
+    "Disease": "Chronic cholestasis",
+    "Symptoms": [
+      "itching",
+      "vomiting",
+      "yellowish skin",
+      "nausea",
+      "loss of appetite",
+      "abdominal pain",
+      "yellowing of eyes"
+    ],
+    "Precaution": "cold baths, anti itch medicine, consult doctor, eat healthy"
+  },
+  {
+    "Disease": "Common Cold",
+    "Symptoms": [
+      "continuous sneezing",
+      "chills",
+      "fatigue",
+      "cough",
+      "high fever",
+      "headache",
+      "swelled lymph nodes",
+      "malaise",
+      "phlegm",
+      "throat irritation",
+      "redness of eyes",
+      "sinus pressure",
+      "runny nose",
+      "congestion",
+      "chest pain",
+      "loss of smell",
+      "muscle pain"
+    ],
+    "Precaution": "drink vitamin c rich drinks, take vapour, avoid cold food, keep fever in check"
+  },
+  {
+    "Disease": "Dengue",
+    "Symptoms": [
+      "skin rash",
+      "chills",
+      "joint pain",
+      "vomiting",
+      "fatigue",
+      "high fever",
+      "headache",
+      "nausea",
+      "loss of appetite",
+      "pain behind the eyes",
+      "back pain",
+      "malaise",
+      "muscle pain",
+      "red spots over body"
+    ],
+    "Precaution": "drink papaya leaf juice, avoid fatty spicy food, keep mosquitos away, keep hydrated"
+  },
+  {
+    "Disease": "Diabetes ",
+    "Symptoms": [
+      "fatigue",
+      "weight loss",
+      "restlessness",
+      "lethargy",
+      "irregular sugar level",
+      "blurred and distorted vision",
+      "obesity",
+      "excessive hunger",
+      "increased appetite",
+      "polyuria"
+    ],
+    "Precaution": "have balanced diet, exercise, consult doctor, follow up"
+  },
+  {
+    "Disease": "Dimorphic hemmorhoids(piles)",
+    "Symptoms": [
+      "constipation",
+      "pain during bowel movements",
+      "pain in anal region",
+      "bloody stool",
+      "irritation in anus"
+    ],
+    "Precaution": "avoid fatty spicy food, consume witch hazel, warm bath with epsom salt, consume alovera juice"
+  },
+  {
+    "Disease": "Drug Reaction",
+    "Symptoms": [
+      "itching",
+      "skin rash",
+      "stomach pain",
+      "burning micturition",
+      "spotting  urination"
+    ],
+    "Precaution": "stop irritation, consult nearest hospital, stop taking drug, follow up"
+  },
+  {
+    "Disease": "Fungal infection",
+    "Symptoms": [
+      "itching",
+      "skin rash",
+      "nodal skin eruptions",
+      "dischromic  patches"
+    ],
+    "Precaution": "bath twice, use detol or neem in bathing water, keep infected area dry, use clean cloths"
+  },
+  {
+    "Disease": "GERD",
+    "Symptoms": [
+      "stomach pain",
+      "acidity",
+      "ulcers on tongue",
+      "vomiting",
+      "cough",
+      "chest pain"
+    ],
+    "Precaution": "avoid fatty spicy food, avoid lying down after eating, maintain healthy weight, exercise"
+  },
+  {
+    "Disease": "Gastroenteritis",
+    "Symptoms": [
+      "vomiting",
+      "sunken eyes",
+      "dehydration",
+      "diarrhoea"
+    ],
+    "Precaution": "stop eating solid food for while, try taking small sips of water, rest, ease back into eating"
+  },
+  {
+    "Disease": "Heart attack",
+    "Symptoms": [
+      "vomiting",
+      "breathlessness",
+      "sweating",
+      "chest pain"
+    ],
+    "Precaution": "call ambulance, chew or swallow asprin, keep calm"
+  },
+  {
+    "Disease": "Hepatitis B",
+    "Symptoms": [
+      "itching",
+      "fatigue",
+      "lethargy",
+      "yellowish skin",
+      "dark urine",
+      "loss of appetite",
+      "abdominal pain",
+      "yellow urine",
+      "yellowing of eyes",
+      "malaise",
+      "receiving blood transfusion",
+      "receiving unsterile injections"
+    ],
+    "Precaution": "consult nearest hospital, vaccination, eat healthy, medication"
+  },
+  {
+    "Disease": "Hepatitis C",
+    "Symptoms": [
+      "fatigue",
+      "yellowish skin",
+      "nausea",
+      "loss of appetite",
+      "yellowing of eyes",
+      "family history"
+    ],
+    "Precaution": "Consult nearest hospital, vaccination, eat healthy, medication"
+  },
+  {
+    "Disease": "Hepatitis D",
+    "Symptoms": [
+      "joint pain",
+      "vomiting",
+      "fatigue",
+      "yellowish skin",
+      "dark urine",
+      "nausea",
+      "loss of appetite",
+      "abdominal pain",
+      "yellowing of eyes"
+    ],
+    "Precaution": "consult doctor, medication, eat healthy, follow up"
+  },
+  {
+    "Disease": "Hepatitis E",
+    "Symptoms": [
+      "joint pain",
+      "vomiting",
+      "fatigue",
+      "high fever",
+      "yellowish skin",
+      "dark urine",
+      "nausea",
+      "loss of appetite",
+      "abdominal pain",
+      "yellowing of eyes",
+      "acute liver failure",
+      "coma",
+      "stomach bleeding"
+    ],
+    "Precaution": "stop alcohol consumption, rest, consult doctor, medication"
+  },
+  {
+    "Disease": "Hypertension ",
+    "Symptoms": [
+      "headache",
+      "chest pain",
+      "dizziness",
+      "loss of balance",
+      "lack of concentration"
+    ],
+    "Precaution": "meditation, salt baths, reduce stress, get proper sleep"
+  },
+  {
+    "Disease": "Hyperthyroidism",
+    "Symptoms": [
+      "fatigue",
+      "mood swings",
+      "weight loss",
+      "restlessness",
+      "sweating",
+      "diarrhoea",
+      "fast heart rate",
+      "excessive hunger",
+      "muscle weakness",
+      "irritability",
+      "abnormal menstruation"
+    ],
+    "Precaution": "eat healthy, massage, use lemon balm, take radioactive iodine treatment"
+  },
+  {
+    "Disease": "Hypoglycemia",
+    "Symptoms": [
+      "vomiting",
+      "fatigue",
+      "anxiety",
+      "sweating",
+      "headache",
+      "nausea",
+      "blurred and distorted vision",
+      "excessive hunger",
+      "drying and tingling lips",
+      "slurred speech",
+      "irritability",
+      "palpitations"
+    ],
+    "Precaution": "lie down on side, check in pulse, drink sugary drinks, consult doctor"
+  },
+  {
+    "Disease": "Hypothyroidism",
+    "Symptoms": [
+      "fatigue",
+      "weight gain",
+      "cold hands and feets",
+      "mood swings",
+      "lethargy",
+      "dizziness",
+      "puffy face and eyes",
+      "enlarged thyroid",
+      "brittle nails",
+      "swollen extremeties",
+      "depression",
+      "irritability",
+      "abnormal menstruation"
+    ],
+    "Precaution": "reduce stress, exercise, eat healthy, get proper sleep"
+  },
+  {
+    "Disease": "Impetigo",
+    "Symptoms": [
+      "skin rash",
+      "high fever",
+      "blister",
+      "red sore around nose",
+      "yellow crust ooze"
+    ],
+    "Precaution": "soak affected area in warm water, use antibiotics, remove scabs with wet compressed cloth, consult doctor"
+  },
+  {
+    "Disease": "Jaundice",
+    "Symptoms": [
+      "itching",
+      "vomiting",
+      "fatigue",
+      "weight loss",
+      "high fever",
+      "yellowish skin",
+      "dark urine",
+      "abdominal pain"
+    ],
+    "Precaution": "drink plenty of water, consume milk thistle, eat fruits and high fiberous food, medication"
+  },
+  {
+    "Disease": "Malaria",
+    "Symptoms": [
+      "chills",
+      "vomiting",
+      "high fever",
+      "sweating",
+      "headache",
+      "nausea",
+      "diarrhoea",
+      "muscle pain"
+    ],
+    "Precaution": "Consult nearest hospital, avoid oily food, avoid non veg food, keep mosquitos out"
+  },
+  {
+    "Disease": "Migraine",
+    "Symptoms": [
+      "acidity",
+      "indigestion",
+      "headache",
+      "blurred and distorted vision",
+      "excessive hunger",
+      "stiff neck",
+      "depression",
+      "irritability",
+      "visual disturbances"
+    ],
+    "Precaution": "meditation, reduce stress, use poloroid glasses in sun, consult doctor"
+  },
+  {
+    "Disease": "Osteoarthristis",
+    "Symptoms": [
+      "joint pain",
+      "neck pain",
+      "knee pain",
+      "hip joint pain",
+      "swelling joints",
+      "painful walking"
+    ],
+    "Precaution": "acetaminophen, consult nearest hospital, follow up, salt baths"
+  },
+  {
+    "Disease": "Paralysis (brain hemorrhage)",
+    "Symptoms": [
+      "vomiting",
+      "headache",
+      "weakness of one body side",
+      "altered sensorium"
+    ],
+    "Precaution": "massage, eat healthy, exercise, consult doctor"
+  },
+  {
+    "Disease": "Peptic ulcer diseae",
+    "Symptoms": [
+      "vomiting",
+      "indigestion",
+      "loss of appetite",
+      "abdominal pain",
+      "passage of gases",
+      "internal itching"
+    ],
+    "Precaution": "avoid fatty spicy food, consume probiotic food, eliminate milk, limit alcohol"
+  },
+  {
+    "Disease": "Pneumonia",
+    "Symptoms": [
+      "chills",
+      "fatigue",
+      "cough",
+      "high fever",
+      "breathlessness",
+      "sweating",
+      "malaise",
+      "phlegm",
+      "chest pain",
+      "fast heart rate",
+      "rusty sputum"
+    ],
+    "Precaution": "consult doctor, medication, rest, follow up"
+  },
+  {
+    "Disease": "Psoriasis",
+    "Symptoms": [
+      "skin rash",
+      "joint pain",
+      "skin peeling",
+      "silver like dusting",
+      "small dents in nails",
+      "inflammatory nails"
+    ],
+    "Precaution": "wash hands with warm soapy water, stop bleeding using pressure, consult doctor, salt baths"
+  },
+  {
+    "Disease": "Tuberculosis",
+    "Symptoms": [
+      "chills",
+      "vomiting",
+      "fatigue",
+      "weight loss",
+      "cough",
+      "high fever",
+      "breathlessness",
+      "sweating",
+      "loss of appetite",
+      "mild fever",
+      "yellowing of eyes",
+      "swelled lymph nodes",
+      "malaise",
+      "phlegm",
+      "chest pain",
+      "blood in sputum"
+    ],
+    "Precaution": "cover mouth, consult doctor, medication, rest"
+  },
+  {
+    "Disease": "Typhoid",
+    "Symptoms": [
+      "chills",
+      "vomiting",
+      "fatigue",
+      "high fever",
+      "headache",
+      "nausea",
+      "constipation",
+      "abdominal pain",
+      "diarrhoea",
+      "toxic look (typhos)",
+      "belly pain"
+    ],
+    "Precaution": "eat high calorie vegitables, antiboitic therapy, consult doctor, medication"
+  },
+  {
+    "Disease": "Urinary tract infection",
+    "Symptoms": [
+      "burning micturition",
+      "bladder discomfort",
+      "foul smell of urine",
+      "continuous feel of urine"
+    ],
+    "Precaution": "drink plenty of water, increase vitamin c intake, drink cranberry juice, take probiotics"
+  },
+  {
+    "Disease": "Varicose veins",
+    "Symptoms": [
+      "fatigue",
+      "cramps",
+      "bruising",
+      "obesity",
+      "swollen legs",
+      "swollen blood vessels",
+      "prominent veins on calf"
+    ],
+    "Precaution": "lie down flat and raise the leg high, use oinments, use vein compression, dont stand still for long"
+  },
+  {
+    "Disease": "hepatitis A",
+    "Symptoms": [
+      "joint pain",
+      "vomiting",
+      "yellowish skin",
+      "dark urine",
+      "nausea",
+      "loss of appetite",
+      "abdominal pain",
+      "diarrhoea",
+      "mild fever",
+      "yellowing of eyes",
+      "muscle pain"
+    ],
+    "Precaution": "Consult nearest hospital, wash hands through, avoid fatty spicy food, medication"
+  },
+  {
+    "Disease": "Peptic Ulcer Disease",
+    "Symptoms": [
+      "Deep or extensive mouth ulcers",
+      "Abdominal pain",
+      "Heartburn",
+      "Regurgitation of food or liquid",
+      "Stomach bleeding"
+    ],
+    "Precaution": "Avoid alcohol, NSAIDs, and smoking. Eat a healthy diet and maintain a healthy weight."
+  },
+  {
+    "Disease": "Depression",
+    "Symptoms": [
+      "reduced appetite",
+      "changes in sleep",
+      "irritability",
+      "lack of motivation",
+      "low self-esteem"
+    ],
+    "Precaution": "Seek professional help, engage in regular exercise, get enough sleep, eat a healthy diet, and avoid alcohol and drugs"
+  },
+  {
+    "Disease": "Thyroid Problem",
+    "Symptoms": [
+      "fatigue",
+      "weight gain or loss",
+      "changes in mood",
+      "skin problems",
+      "difficulty concentrating"
+    ],
+    "Precaution": "Get your thyroid levels checked, take medication as prescribed, and follow a healthy lifestyle"
+  }
+]

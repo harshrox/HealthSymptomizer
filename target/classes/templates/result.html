@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+<h1>Result</h1>
+<div id="result"></div>
+
+<script>
+    // Retrieve response data from URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const responseString = urlParams.get('response');
+
+    // Parse response data from JSON string
+    const responseData = JSON.parse(decodeURIComponent(responseString));
+
+    // Display response data
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = JSON.stringify(responseData, null, 2);
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Symptomizer</title>
+</head>
+<link rel="stylesheet" href="css/styles.css">
+<body>
+
+<div class="container" id="contain">
+    <div class="title">Symptoms Checker</div>
+    <form id="regForm"   onsubmit="submitData()">
+
+        <div  class="tab">
+
+            <!--      For User  -->
+            <div class="user__details">
+                <div class="input__box">
+                    <h3 class="details">Full Name</h3>
+                    <input type="text" name="username" class="username" placeholder="E.g: Aryan Dev" required>
+                </div>
+            </div>
+
+
+            <!--      For Age  -->
+            <div class="gender__details">
+                <input type="radio" name="age" id="dot-3"  >
+                <input type="radio" name="age" id="dot-4" >
+                <input type="radio" name="age" id="dot-5" >
+
+                <span class="gender__title">Age</span>
+                <div class="category">
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span>Up to 2 months</span>
+                    </label>
+                    <label for="dot-4">
+                        <span class="dot four"></span>
+                        <span>2 months - 5 years </span>
+                    </label>
+                    <label for="dot-5">
+                        <span class="dot five"></span>
+                        <span>More than 5 years. </span>
+                    </label>
+                </div>
+            </div>
+            <!--       For Gender -->
+
+            <div class="gender__details">
+                <input type="radio" name="gender" id="dot-1">
+                <input type="radio" name="gender" id="dot-2">
+
+                <span class="gender__title">Gender</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span>Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span>Female</span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="form2" class="tab">
+
+
+            <h3>Symptoms</h3>
+
+            <div id="add_input">
+
+
+
+
+
+
+
+            </div>
+            <div>
+                <button type="button" class="btn addbtn" onclick="addButton()">
+                   Add
+                </button>
+            </div>
+
+
+
+
+        </div>
+
+    </form>
+
+
+
+
+    <div >
+        <div style="float:right;">
+            <button type="button" id="prevBtn" class="btn"  onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn"  class="btn" onclick="nextPrev(1)">Next</button>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+<div id="resultContainer">
+
+</div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
