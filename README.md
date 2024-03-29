@@ -21,7 +21,21 @@ Welcome to HealthSymptomizer, your reliable source for understanding health symp
 3. **View Results**: Explore the list of probable diseases along with their probabilities and precautionary measures.
    
 4. **Precautionary Advice**: Implement recommended precautions and lifestyle changes to mitigate health risks.
+   
+## Download and Run the JAR File
 
+To run HealthSymptomizer locally on your machine, follow these steps:
+
+1. **Download the JAR file**: Click [here](target/detect-symptom-0.0.1-SNAPSHOT.jar) to download the JAR file.
+   
+2. **Open Terminal/Command Prompt**: Open Terminal (on macOS/Linux) or Command Prompt (on Windows).
+   
+3. **Navigate to JAR File Location**: Use the `cd` command to navigate to the directory where the JAR file is downloaded.
+   
+4. **Run the JAR File**: Type `java -jar detect-symptom-0.0.1-SNAPSHOT.jar` and press Enter to run the application.
+   
+5. **Access HealthSymptomizer**: Open a web browser and go to `http://localhost:4000` to access HealthSymptomizer locally.
+   
 ## About Us
 
 HealthSymptomizer is developed by a team of 4th semester students. Our mission is to empower individuals to make informed decisions about their health and well-being.
