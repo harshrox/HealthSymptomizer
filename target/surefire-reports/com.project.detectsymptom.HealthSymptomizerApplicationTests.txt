@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.project.detectsymptom.HealthSymptomizerApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.597 s -- in com.project.detectsymptom.HealthSymptomizerApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.452 s -- in com.project.detectsymptom.HealthSymptomizerApplicationTests
